@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2021101075</title>
+<body>
+    <button onmouseover="increaseSize()" onmouseout="decreasesize()" onclick="changeColour()" style="background-color: rgb(227, 132, 132);border-radius: 50%; color: #e9ff25" id="BUTTON">HOVER OVER ME</button>
+    <script>
+        var intervalID;
+        var currentsize = 100;
+        var maximum_min = [50, 500];
+        var direction = 1;
+
+        function increaseSize(){
+            intervalID = setInterval(() => {
+                var btn = document.getElementById("BUTTON");
+                currentsize = currentsize + direction * 20;
+                btn.style.height = currentsize + "px";
+                btn.style.width = currentsize + "px";
+
+                if(currentsize >= maximum_min[1]){
+                    direction = -1;
+                }
+                else if(currentsize <= maximum_min[0]){
+                    direction = 1;
+                }
+            }, 100);
+        }
+
+        function decreasesize(){
+            clearInterval(intervalID);
+        }
+    </script>
+</body>
+</html>

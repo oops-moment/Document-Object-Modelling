@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="background-color: black; border-radius: 50% ; font-size: 20px;" id="button1" onclick="changecolor()"><p style="color: aliceblue;">Hello</p></button>
+ 
+</body>
+<script>
+  var i=0;
+    function changecolor()
+    {
+        const colors =["red","green","blue"];
+        var col=document.getElementById("button1");
+        col.style.backgroundColor=colors[i%3];
+        i+=1;
+    }
+</script>
+</html>
